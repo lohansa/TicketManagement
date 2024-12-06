@@ -1,17 +1,26 @@
 const express = require('express');
+const mongoose = require('mongoose');
+const connectDB = require('./config/db');
 
-// Initialize the Express application
+// Load environment variables from .env
+require('dotenv').config();
+
+// Initialize the Express app
 const app = express();
 
-// Define the port the server will listen on
-const PORT = 3000;
+// Connect to MongoDB
+connectDB();
 
-// Define a route for '/'
-app.get('/', (req, res) => {
-    res.send('Hello, Lohansa!');
+// Middleware to parse JSON requests
+app.use(express.json());
+
+// Define a test schema and model
+const TestSchema = new mongoose.Schema({
+    message: { type: String, required: true },
 });
 
 // Start the server
+const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
     console.log(`Server is running on http://localhost:${PORT}`);
 });

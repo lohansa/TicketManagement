@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js" ,
+    "start": "node index.js",
     "dev": "nodemon index.js"
   },
   "repository": {
@@ -18,7 +18,10 @@
   },
   "homepage": "https://github.com/lohansa/TicketManagement#readme",
   "dependencies": {
-    "express": "^4.21.2"
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "mongodb": "^6.11.0",
+    "mongoose": "^8.8.4"
   },
   "devDependencies": {
     "nodemon": "^3.1.7"
